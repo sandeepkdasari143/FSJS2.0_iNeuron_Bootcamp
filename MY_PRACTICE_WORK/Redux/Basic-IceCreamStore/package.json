@@ -1,0 +1,17 @@
+{
+  "name": "basic-icecreamstrore",
+  "version": "1.0.0",
+  "description": "This is the redux practice folder.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "redux"
+  ],
+  "author": "Sandeep K. Dasari",
+  "license": "ISC",
+  "dependencies": {
+    "redux": "^4.2.0"
+  }
+}
