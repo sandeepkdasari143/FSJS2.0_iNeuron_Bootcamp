@@ -1,0 +1,1 @@
+# FireBase v9 Practice Projects are located here.
