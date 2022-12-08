@@ -1,11 +1,13 @@
-import { useState } from 'react';
+
 function Form() {
-    const [username, setUsername] = useState("Sandeep");
 
     const ConsoleIt = (e) => {
         e.preventDefault();
         const form = document.querySelector("#formOne");
-        const button = document.querySelector("#button");
+        // const button = document.querySelector("#button");
+        if (!form.username.value) {
+            alert("Enter something in the form!")
+        }
         console.log(form.username.value);
         form.reset();
     }
@@ -16,24 +18,18 @@ function Form() {
                 action="post"
                 id="formOne"
                 onSubmit={ConsoleIt}
-                className="flex flex-col space-y-2 items-center justify-center"
+                className="flex flex-col space-y-2 justify-center items-center"
             >
-                <label htmlFor="name">Enter the UserName:</label>
-                <br />
                 <input
                 className="textField"
                 type="search"
-                name="username"
-                defaultValue={username}
-                onChange={(e) => {
-                    e.preventDefault();
-                    setUsername(e.target.value);
-                }}
+                    name="username"
+                    placeholder='Add ToDo'
                 required
                 />
 
                 <button id="button" type="submit" className="button">
-                    Add
+                    Add Todo
                 </button>
             </form>
         </div>
