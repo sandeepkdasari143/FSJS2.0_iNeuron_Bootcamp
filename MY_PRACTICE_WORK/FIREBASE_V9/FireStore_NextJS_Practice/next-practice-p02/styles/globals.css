@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components{
+  .input{
+    @apply bg-zinc-700 focus:bg-zinc-800 border text-white font-semibold text-lg p-2 outline-none
+  }
+}
+
 html,
 body {
   padding: 0;
