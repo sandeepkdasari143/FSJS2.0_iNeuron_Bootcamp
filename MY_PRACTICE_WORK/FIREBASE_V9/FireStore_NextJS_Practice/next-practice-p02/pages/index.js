@@ -1,6 +1,10 @@
-import Head from 'next/head'
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { useState, useRef } from "react";
+
+import { setDoc, doc } from "firebase/firestore";
+import { db } from "../firebase";
+import { v4 as uuidv4 } from "uuid";
 
 export default function Home() {
   const router = useRouter();
@@ -28,20 +32,37 @@ export default function Home() {
   const [userEmail, setuserEmail] = useState("");
   const [userPassword, setuserPassword] = useState("");
   const buttonRef = useRef();
+  const uid = uuidv4();
+  // const usersRef = collection(db, 'users');
 
-  const handleClick = (e) => {
+  const handleClick = async (e) => {
     e.preventDefault();
-    if (users.map((email) => { userEmail === email; }) && userPassword=== users[0].password) {
-      router.push("/profile");
-      console.log("Correct");
+    if (
+      users.map((email) => {
+        userEmail === email;
+      }) &&
+      userPassword === users[0].password
+    ) {
+      setDoc(doc(db, 'users', uid), {
+        email: userEmail,
+        password: userPassword
+      }).then(() => {
+        router.push({
+          pathname: "/profile",
+          query: {
+            uid,
+          },
+        });
+      }
+      )
+      return;
     }
 
     buttonRef.current.style.background = "white";
     buttonRef.current.style.color = "black";
-    buttonRef.current.classList.add("rounded-full")
-    buttonRef.current.classList.add("p-3")
+    buttonRef.current.classList.add("rounded-full");
+    buttonRef.current.classList.add("p-3");
     console.log("Wrong Input");
-    
   };
 
   return (
@@ -54,7 +75,7 @@ export default function Home() {
 
       <form
         onSubmit={handleClick}
-        className="flex flex-col space-y-5 border-4 p-5 border-white"
+        className="flex flex-col space-y-5 border-4 p-5 border-white w-3/4"
       >
         <p className="text-center text-xl mb-3 font-semibold text-white">
           LogIn Form
