@@ -1,0 +1,98 @@
+CTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .aFour {
+            height: 297mm;
+            width: 210mm;
+            background-color: red;
+            margin: 1rem auto;
+        }
+
+        .page {
+            background-color: azure;
+            width: 180mm;
+            height: 267mm;
+            max-height: 267mm;
+            max-width: 180mm;
+            border: none;
+            resize: none;
+            outline: 0;
+            font-size: 12pt;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 500;
+            font-style: normal;
+            margin-left: 15mm;
+            margin-top: 15mm;
+            overflow: auto;
+        }
+    </style>
+    <title>word clone</title>
+</head>
+
+<body>
+    <button>Click Me</button>
+    <div class="aFour" id="aFour">
+        <textarea id="page" class="page" cols="30" rows="10"></textarea>
+    </div>
+    <script>
+
+        window.addEventListener('load', (event) => {
+            newpage();
+        });
+
+
+
+        const newpage = () => {
+            let gpage = document.getElementById('page')
+            let body = document.querySelector('body')
+            let aFour = document.getElementById('aFour')
+            let button = document.querySelector('button')
+
+            button.addEventListener("click", () => {
+                let throwawayNode = body.removeChild(aFour);
+                let throwawayNode2 = body.removeChild(gaFour);
+            })
+
+
+            gpage.addEventListener('overflow', () => {
+
+                console.log("Overflow")
+
+                let aFour = document.createElement('div')
+                aFour.setAttribute("class", "aFour")
+                aFour.setAttribute("id", "aFour")
+
+                let page = document.createElement('TEXTAREA')
+                page.setAttribute("class", "page")
+                page.setAttribute("class", "page")
+
+                aFour.appendChild(page)
+                body.appendChild(aFour)
+
+                newpage();
+
+
+            }, false)
+        }
+
+
+    </script>
+</body>
+
+</html>

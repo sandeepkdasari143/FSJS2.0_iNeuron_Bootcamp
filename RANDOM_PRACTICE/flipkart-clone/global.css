@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Alfa+Slab+One&family=Anton&family=Dancing+Script:wght@700&family=Montserrat:wght@800;900&family=Pangolin&family=Roboto:wght@400;500;700&family=Tangerine:wght@400;700&display=swap');
+
+:root{
+    --bg-body: #c7f0c1;
+    --bg-hover: #b4ebad;
+    --bg-mainHeader:linear-gradient(to bottom right, #339476, #a2e698);
+    --bg-categories:#daf5d6;
+
+    --padding:
+    --padding-XY: 
+
+    --globalFont: Roboto;
+    --globalFontWeight: 400;
+}
+
+*::before,
+*,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-body);
+}
+
+.material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 500,
+                'GRAD' 0,
+                'opsz' 48
+    }
+
+.icons{
+    font-size: 3rem !important;
+}

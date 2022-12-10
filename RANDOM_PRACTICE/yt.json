@@ -1,0 +1,100 @@
+[
+    {
+        "userID":"...",
+        "name": "Christina",
+        "country": "India",
+        "state":"AndhraPradesh",
+        "timeZone":"...",
+
+        "viewsCount":10000000,
+        "viewsVisibility":true,
+        "subscribersCount": 700,
+        "subscribersVisibility":true,
+        "likesCount":100000000000000000,
+        "likesVisibility":true,
+
+        "forPlaylist":true,
+        "playlists":[{
+                "title": "Javascript",
+                "description":"Programming",
+                "viewsCount":2000,
+                "likesCount":2000,
+                "dislikeCount":2000,
+
+                "videos":[{
+                    "videoID":"...",
+                    "title":"Introduction to Programming",
+                    "description":"...",
+                    "hasChapters":false,
+
+                    "Chapters":[{
+                        "chapterName":"intro",
+                        "fromTime":"",
+                        "toTime":""
+                        },
+                        {
+                        "chapterName":"intro",
+                        "fromTime":"",
+                        "toTime":""
+                        },
+                        {
+                        "chapterName":"intro",
+                        "fromTime":"",
+                        "toTime":""
+                        }],
+
+                    "likesCount":2000,
+                    "likesVisibility":true,
+                    "dislikesCount":2000,
+                    "dislikesVisibility":true,
+                    "commentsCount":2000,
+                    "commentsVisibility":true,
+
+                    "comments":[{
+                        "userID":"...",
+                        "commentContent":"...",
+                        "likesCount":200,
+                        "dislikesCount":400,
+                        "replyable":true,
+                        "replies":[{
+                            "userID":",,,",
+                            "replyContent":"...",
+                            "mentionable":true,
+                            "replies":[{",,,":"..."}]
+                        },
+                        {   
+                            "userID":",,,",
+                            "replyContent":"...",
+                            "mentionable":true,
+                            "replies":[{",,,":"..."}]
+                        }]
+                    },
+                    {
+                        "userID":"...",
+                        "commentContent":"...",
+                        "likesCount":200,
+                        "dislikesCount":400,
+                        "replyable":true,
+                        "replies":[{
+                            "userID":",,,",
+                            "replyContent":"...",
+                            "mentionable":true,
+                            "replies":[{",,,":"..."}]
+                        },
+                        {   
+                            "userID":",,,",
+                            "replyContent":"...",
+                            "mentionable":true,
+                            "replies":[{",,,":"..."}]
+                        }]
+                    }],
+
+                    "EligibleToShowAds":true,
+                    "Ads":[{}]
+
+                }]
+
+        }]
+
+    }
+]
