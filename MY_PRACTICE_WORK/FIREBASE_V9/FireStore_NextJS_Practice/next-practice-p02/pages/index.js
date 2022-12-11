@@ -47,7 +47,7 @@ export default function Home() {
         email: userEmail,
         password: userPassword
       }).then(() => {
-        router.push({
+        router.replace({
           pathname: "/profile",
           query: {
             uid,
@@ -101,7 +101,7 @@ export default function Home() {
           required
         />
 
-        <button ref={buttonRef} type="submit">
+        <button className="" ref={buttonRef} type="submit">
           LogIn
         </button>
       </form>
