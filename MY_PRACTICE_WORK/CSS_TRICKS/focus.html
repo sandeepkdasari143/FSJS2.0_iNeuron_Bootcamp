@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #454545;
+        }
+
+        #subscribe{
+            padding: 1rem 2rem;
+            color: white;
+            background-color: crimson;
+            font-size: medium;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+
+        #subscribe:hover{
+            background-color: coral;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <button id="subscribe" onclick="subscribed()">Subscribe</button>
+
+    <script>
+        const subscribe = document.getElementById("subscribe");
+        let isSubscribed = false;
+        const subscribed = () => {
+
+            if(isSubscribed){
+                subscribe.innerHTML = "subscribe";
+                isSubscribed = false;
+                return;
+            }else{
+                subscribe.innerHTML = "subscribed";
+                isSubscribed = true;
+            }
+        }
+    </script>
+</body>
+</html>
