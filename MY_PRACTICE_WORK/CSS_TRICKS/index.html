@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        body{
+            background-color: #242B2E;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        .card{
+            display: flex;
+            gap: 8px;
+            height: 300px;
+            width: 800px;
+            background-color: #CAD5E2;
+            border-radius: 8px;
+        }
+        .image{
+            height: 100%;
+            flex-basis: 60%;
+            /* background-color: #fff;   */
+        }
+        .image>img{
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            border-radius:.5rem 0rem 0rem .5rem;
+        }
+
+        .Description{
+            flex-basis: 40%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .Description > h1{
+            padding: 8px;
+        }
+
+        .Description >p{
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <div class="image">
+                <img src="./Assets/Chemistry.jpg" alt="">
+            </div>
+            <div class="Description">
+                <h1>Indian Chemical Society</h1>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi eos quam atque voluptatem, non, dignissimos vero reiciendis, facilis dolorum quo placeat ad omnis. Ducimus rem laboriosam quae quaerat! Labore, aliquam!</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
