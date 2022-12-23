@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Modelling</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: #454545;
+            font-family: sans-serif;
+        }
+        .Recommendations{
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            height: 100vh;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .card{
+            display: flex;
+            align-items: center;
+            flex-basis: 35%;
+            height: 35vh;
+            background-color: black;
+            color: bisque;
+        }
+        .cardImg{
+            height: 100%;
+            background-color: #fff7;
+        }
+        .cardImg > img{
+            height: 100%;
+            object-fit: contain;
+        }
+        .cardDescription{
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+        }
+        .cardDescription > *{
+            margin: 10px 0px 10px 0px;
+        }
+        .button{
+            background-color: crimson;
+            color: aliceblue;
+            border: none;
+            cursor: pointer;
+            padding: 10px 25px;
+        }
+
+    </style>
+</head>
+<body>
+    <main class="Recommendations">
+        <section class="card">
+            <div class="cardImg">
+                <img src="./Assets/SpiderMan.jpeg" alt="">
+            </div>
+        
+            <div class="cardDescription">
+                <h2>Super hero wearing spider mask</h2>
+                <p>Strategy, Actions</p>
+                <h5 style="font-size: 13px; font-weight: 400;">A superhero wearing a spider mask, who helps many people in the world.</h5>
+                <div class="button">Download</div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="cardImg">
+                <img src="./Assets/SpiderMan.jpeg" alt="">
+            </div>
+        
+            <div class="cardDescription">
+                <h3>Super hero wearing spider mask</h3>
+                <p>Strategy, Actions</p>
+                <h5 style="font-size: 13px; font-weight: 400;">A superhero wearing a spider mask, who helps many people in the world.</h5>
+                <div class="button">Download</div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="cardImg">
+                <img src="./Assets/SpiderMan.jpeg" alt="">
+            </div>
+        
+            <div class="cardDescription">
+                <h3>Super hero wearing spider mask</h3>
+                <p>Strategy, Actions</p>
+                <h5 style="font-size: 13px; font-weight: 400;">A superhero wearing a spider mask, who helps many people in the world.</h5>
+                <div class="button">Download</div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="cardImg">
+                <img src="./Assets/SpiderMan.jpeg" alt="">
+            </div>
+        
+            <div class="cardDescription">
+                <h3>Super hero wearing spider mask</h3>
+                <p>Strategy, Actions</p>
+                <h5 style="font-size: 13px; font-weight: 400;">A superhero wearing a spider mask, who helps many people in the world.</h5>
+                <div class="button">Download</div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
