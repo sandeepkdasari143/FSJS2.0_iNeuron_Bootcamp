@@ -1,32 +1,21 @@
-import { collection, onSnapshot} from "firebase/firestore"
-import { useEffect, useState } from "react";
-import { db } from "../config/firebase"
+import React, { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { getAllUsers, getUsers } from '../redux-store/Drugs/drugsSlice';
 
-export default function DisplayUsers() {
-
-    const [users, setUsers] = useState([]);
-
-    //todo: have a reference to the firestore users collection.
-    const usersColRef = collection(db, "users");
+export default function DisplayUsers(){
+    const dispatch = useDispatch();
+    const users = useSelector(getUsers);
 
     useEffect(() => {
-        onSnapshot(usersColRef, (snapshot) => {
-            setUsers(snapshot.docs.map((doc) => {
-                return {...doc.data(), id: doc.id}
-            }))
-        })
-    })
-    
+        dispatch(getAllUsers());
+    }, [dispatch])
+
     return (
-        <div className="text-white font-bold">
-            {users.map((user) => { 
-                return (
-                    <h1 key={user.id}>{user.email}</h1>
-                )
-            })}
+        <div>
+            <h1>Users are:</h1>
+            {users.map((user, index) => (
+                <h1 key={index}>{user.id}</h1>
+            ))}
         </div>
     )
-
-
-    
 }
