@@ -19,17 +19,18 @@ const usersColRef = collection(db, "users");
 export const getAllUsers = createAsyncThunk(
     "drugs/getAllUsers",
     async () => {
-        let users = [];
-        getDocs(usersColRef).then((snapshot) => {
-            snapshot.docs.map((doc) => users.push({...doc.data(), id: doc.id}))
-        }).catch(err => console.log(err.message))
-        console.log(users);
-        return users;
+        let data = []
+        await onSnapshot(usersColRef, (snapshot) => {
+            snapshot.docs.map((doc) => {
+                return data.push({...doc.data(), id: doc.id})
+            })
+        });
+        return data;
     }
 );
 
-export const initialState = {
-    user:[],
+const initialState = {
+    users:[],
     
 }
 
@@ -40,7 +41,7 @@ export const drugsSlice = createSlice({
     extraReducers: {
         [getAllUsers.fulfilled]: (state, { payload }) => {
             console.log(payload);
-            return {...state, user: payload}
+            return state.users.push(...payload)
         }
     }
 });
