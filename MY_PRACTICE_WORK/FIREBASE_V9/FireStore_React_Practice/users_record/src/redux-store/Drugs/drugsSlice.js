@@ -1,18 +1,36 @@
 import { createSlice} from "@reduxjs/toolkit";
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import UsersDataService from "../../serviceWorkers/firebaseService";
+import {
+    addDoc,
+    collection,
+    deleteDoc,
+    doc,
+    getDoc,
+    getDocs,
+    onSnapshot,
+    updateDoc,
+} from "firebase/firestore";
+import { useState } from "react";
+import { db } from "../../config/firebase";
 
-export const getAllUsers = createAsyncThunk("drugs/getAllUsers", async () => {
-    const data = await UsersDataService.getAllUsers();
-    console.log(data);
-    return data;
-})
+const usersColRef = collection(db, "users");
+
+
+export const getAllUsers = createAsyncThunk(
+    "drugs/getAllUsers",
+    async () => {
+        let users = [];
+        getDocs(usersColRef).then((snapshot) => {
+            snapshot.docs.map((doc) => users.push({...doc.data(), id: doc.id}))
+        }).catch(err => console.log(err.message))
+        console.log(users);
+        return users;
+    }
+);
 
 export const initialState = {
-    users:[],
-    drugToUpdate: null,
-    drugToUpdateKey: null,
-    isLoading: false
+    user:[],
+    
 }
 
 export const drugsSlice = createSlice({
@@ -21,7 +39,8 @@ export const drugsSlice = createSlice({
     reducers: {},
     extraReducers: {
         [getAllUsers.fulfilled]: (state, { payload }) => {
-            return { ...state, users: payload }
+            console.log(payload);
+            return {...state, user: payload}
         }
     }
 });
