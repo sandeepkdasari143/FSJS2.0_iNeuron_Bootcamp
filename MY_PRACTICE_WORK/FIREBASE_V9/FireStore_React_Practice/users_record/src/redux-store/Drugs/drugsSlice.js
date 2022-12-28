@@ -31,7 +31,6 @@ export const getAllUsers = createAsyncThunk(
 
 const initialState = {
     users:[],
-    
 }
 
 export const drugsSlice = createSlice({
@@ -39,16 +38,33 @@ export const drugsSlice = createSlice({
     initialState,
     reducers: {},
     extraReducers: {
+        [getAllUsers.pending]: (state) => {
+            console.log("Pending");
+            console.log(state.users);
+        },
+
         [getAllUsers.fulfilled]: (state, { payload }) => {
-            console.log(payload);
-            return state.users.push(...payload)
+            console.log("Successfully Fetched");
+            console.log("Payload:", payload);
+            let user = [];
+            user = payload;
+            console.log("User Array: ", user);
+            
+            return state.users.push(user.map((use) => {
+                console.log({...use});
+                return {...use}
+            }))
+        },
+
+        [getAllUsers.rejected]: () => {
+            console.log("Rejected");
         }
     }
 });
 
 //TODO => Export all the ACTIONS...
 export const { } = drugsSlice.actions;
-export const getUsers = (state => state.users.users);
+export const getUsers = (state => state.users);
 
 //TODO: Export the Reducer to specify it in out GLOBAL STORE...
 export default drugsSlice.reducer;
